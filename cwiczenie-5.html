@@ -23,6 +23,27 @@
 	
 		function generuj()
 		{
+			const x = parseInt(document.getElementById("x").value);
+ 			const wynik = document.getElementById("wynik");
+
+  			wynik.innerHTML = "";
+
+			if(isNaN(x) || x<=0){
+				wynik.innerHTML = "Paaanie! Z takim x to my daleko nie zajedziemy!";
+			}
+
+			var suma = 0;
+			var tekst = "";
+
+			for(var i=1;i<=x;i++){
+				suma+=i;
+				if(i==1){
+					tekst += `${i}`;
+				}else{
+					tekst+= ` + ${i}`;
+				}
+				wynik.innerHTML += `${tekst} = ${suma}<br>`;
+			}
 			
 		}
 

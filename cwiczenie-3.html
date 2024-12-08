@@ -30,7 +30,30 @@
 	
 		function przemowa()
 		{
-			
+
+			const ile = parseInt(document.getElementById("ile").value);
+			const wynik = document.getElementById("wynik");
+			const postac = document.getElementById("postac").value;
+
+			wynik.innerHTML = "";
+
+			if(isNaN(ile) || ile<=0){
+				wynik.innerHTML = "Jeśli nie chcesz mojej zguby, krokodyla daj mi, luby";
+				return;
+			}
+
+			var tekst = "";
+			if(postac == "c"){
+				tekst = "Mocium panie!";
+			}else if(postac=="r"){
+				tekst = "Niech się dzieje wola nieba!";
+			}
+
+			var mowa = "";
+			for(var i = 0;i<ile;i++){
+				mowa += `${i+1}. ${tekst}<br>`;
+			}
+			wynik.innerHTML = mowa;
 		}
 
 	</script>
